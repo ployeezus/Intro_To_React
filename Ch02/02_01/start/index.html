@@ -2,13 +2,17 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <!-- react library script and react DOM -->
+    <!-- react library script, react DOM, and Babel -->
     <script
     src="https://unpkg.com/react@17/umd/react.development.js"
       crossorigin
     ></script>
     <script
       src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/babel-standalone@6/babel.min.js"
       crossorigin
     ></script>
     <title>React ⚛️</title>
@@ -20,7 +24,9 @@
 
     <!-- To create react, first create an id div and then a script -->
     <div id="root"></div>
-    <script type="text/javascript">
+    <!-- change type from javascript to babel for list emojis to work -->
+    <script type="text/babel">
+    // <script type="text/javascript">
       // creating react elemt with own seperate variable header example
       // let heading = React.createElement(
       //     "h1",
@@ -39,16 +45,24 @@
       //   React.createElement("li", null, "Friday"),
       //   );
 
-
+      let shyface = "🤭";
+      let grapes = "🍇";
+      let die = "🎲";
+      let name = "React";
 
       // React DOM takes two different arguments
       ReactDOM.render(
         // 1. element we want to create
+        
+        // fix this by using babel
           <ul>
-            <li>🤭</li>
-            <li>🍇</li>
-            <li>🎲</li>
+            <li>{shyface}</li>
+            <li>{grapes}</li>
+            <li>{die}</li>
+            <li>{name.toUpperCase()}</li>
+            <li>{name.length}</li>
           </ul>,
+
         // 2. where we want to put this
         document.getElementById("root")
       );
