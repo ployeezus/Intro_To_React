@@ -14,15 +14,21 @@
     <title>React ⚛️</title>
   </head>
   <body>
+    <!-- To create react, first create an id div and then a script -->
     <div id="root"></div>
     <h1>Getting Started with React</h1>
     <script type="text/javascript">
-      ReactDOM.render()
+      // React DOM takes two different arguments
+      ReactDOM.render(
+        // 1. element we want to create
         React.createElement(
           "h1",
           null,
           "Getting Started with React"
-        )
+        ),
+        // 2. where we want to put this
+        document.getElementById("root")
+      );
     </script>
   </body>
 </html>
