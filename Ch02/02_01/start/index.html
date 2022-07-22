@@ -13,23 +13,45 @@
     ></script>
     <title>React ⚛️</title>
   </head>
+
   <body>
+    <!-- Trying to recreate this:
+    <h1>Getting Started with React</h1> -->
+
     <!-- To create react, first create an id div and then a script -->
     <div id="root"></div>
-    <h1>Getting Started with React</h1>
     <script type="text/javascript">
+      // creating react elemt with own seperate variable header example
+      // let heading = React.createElement(
+      //     "h1",
+      //     null,
+      //     "Getting Started with React!!!!!!!!"
+      //     );
+
+      // When our ui becomes more complex, we should use a helper (JSX) instead of this:
+      // let ul = React.createElement(
+      //   "ul",
+      //   {style: {color: "blue"}},
+      //   React.createElement("li", null, "Monday"),
+      //   React.createElement("li", null, "Tuesday"),
+      //   React.createElement("li", null, "Wednesday"),
+      //   React.createElement("li", null, "Thursday"),
+      //   React.createElement("li", null, "Friday"),
+      //   );
+
+
+
       // React DOM takes two different arguments
       ReactDOM.render(
         // 1. element we want to create
-        React.createElement(
-          "h1",
-          null,
-          "Getting Started with React"
-        ),
+          <ul>
+            <li>🤭</li>
+            <li>🍇</li>
+            <li>🎲</li>
+          </ul>,
         // 2. where we want to put this
         document.getElementById("root")
       );
     </script>
   </body>
 </html>
-
