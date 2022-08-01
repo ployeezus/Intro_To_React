@@ -63,9 +63,14 @@
       function Main(props){
         return (
           <section>
+            <img 
+              height={200}
+              src="./pexels-elevate-1267320.jpg" 
+              alt="A cook placing food on table"
+            />
             <ul>
               {props.dishes.map((dish) => (
-                <li>{dish}</li>
+                <li key={dish.id}>{dish.title}</li>
               ))}
             </ul>
             </section>
@@ -85,17 +90,24 @@
         "Shrimp Tacos"
       ]
 
+      const dishObjects = dishes.map(
+        (dish, i) => ({
+          id: i,
+          title: dish
+        })
+      );
+
       //React component
       function App(){
         return (
-          <div>
+          <React.Fragment>
             <Header name="Ploy" />
             <Main 
               adjective="amazing"
-              dishes={dishes} 
+              dishes={dishObjects} 
             />
             <Footer year={new Date().getFullYear} />
-          </div>
+          </React.Fragment>
         )
       }
 
