@@ -19,6 +19,7 @@
   </head>
 
   <body>
+
     <!-- Trying to recreate this:
     <h1>Getting Started with React</h1> -->
 
@@ -45,23 +46,73 @@
       //   React.createElement("li", null, "Friday"),
       //   );
 
-      let shyface = "🤭";
-      let grapes = "🍇";
-      let die = "🎲";
-      let name = "React";
+      // let shyface = "🤭";
+      // let grapes = "🍇";
+      // let die = "🎲";
+      // let name = "React";
+
+      //props = component properties
+      function Header(props){
+        console.log(props)
+        return (
+          <header>
+            <h1>{props.name}'s Kitchen</h1>
+            </header>
+        )
+      }
+      function Main(props){
+        return (
+          <section>
+            <ul>
+              {props.dishes.map((dish) => (
+                <li>{dish}</li>
+              ))}
+            </ul>
+            </section>
+        );
+      }
+      function Footer(props){
+        return (
+          <footer>
+            <p>Copyright {props.year}</p>
+          </footer>
+        )
+      }
+
+      const dishes = [
+        "Dumplings",
+        "Quesadilla",
+        "Shrimp Tacos"
+      ]
+
+      //React component
+      function App(){
+        return (
+          <div>
+            <Header name="Ploy" />
+            <Main 
+              adjective="amazing"
+              dishes={dishes} 
+            />
+            <Footer year={new Date().getFullYear} />
+          </div>
+        )
+      }
 
       // React DOM takes two different arguments
       ReactDOM.render(
         // 1. element we want to create
         
         // fix this by using babel
-          <ul>
-            <li>{shyface}</li>
-            <li>{grapes}</li>
-            <li>{die}</li>
-            <li>{name.toUpperCase()}</li>
-            <li>{name.length}</li>
-          </ul>,
+          // <ul>
+          //   <li>{shyface}</li> //jsx expression in curly brackets
+          //   <li>{grapes}</li>
+          //   <li>{die}</li>
+          //   <li>{name.toUpperCase()}</li>
+          //   <li>{name.length}</li>
+          // </ul>,
+
+          <App />,
 
         // 2. where we want to put this
         document.getElementById("root")
